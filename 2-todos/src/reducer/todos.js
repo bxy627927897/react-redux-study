@@ -2,7 +2,7 @@
 * @Author: msi-pc
 * @Date:   2018-07-03 17:58:06
 * @Last Modified by:   msi-pc
-* @Last Modified time: 2018-07-05 11:06:44
+* @Last Modified time: 2018-07-05 11:14:56
 */
 const todos = (state = [], action) => {
 	switch (action.type) {
@@ -22,10 +22,8 @@ const todos = (state = [], action) => {
           : todo
       )
     case 'TOGGLE_DELETE':
-      return state.map(todo =>
-        (todo.id === action.id)
-          ? {...todo, text: '已删除'}
-          : todo
+      return state.filter(todo =>
+        todo.id !== action.id
       )
 		default:
 			return state
