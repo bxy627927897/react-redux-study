@@ -2,12 +2,12 @@
 * @Author: msi-pc
 * @Date:   2018-07-04 09:47:43
 * @Last Modified by:   msi-pc
-* @Last Modified time: 2018-07-04 11:13:17
+* @Last Modified time: 2018-07-05 10:59:07
 */
 import React from 'react'
 import { connect } from 'react-redux'
 import VisibleList from '../components/VisibleList'
-import { VisibilityFilters, changeToggle } from '../action'
+import { VisibilityFilters, changeToggle, deleteToggle } from '../action'
 
 const setVisibleList = (todos, filter) => {
 	switch (filter) {
@@ -27,7 +27,8 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-	toggleTodo: id => dispatch(changeToggle(id))
+	toggleTodo: id => dispatch(changeToggle(id)),
+	toggleDelete: id => dispatch(deleteToggle(id))
 })
 
 
